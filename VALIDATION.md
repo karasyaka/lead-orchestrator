@@ -54,7 +54,7 @@ No hidden extras, generated files, images, binaries, symlinks, reparse points, s
 
 ## Historical pre-Git package check — 2026-09-06
 
-This section records the local package state before the first repository commit and private push. At this snapshot, Git history did not yet exist and commit attribution had not yet been checked. See [Publication snapshot](#publication-snapshot--2026-09-06) for the newer private-publication evidence.
+This section records the local package state before the first repository commit and private push. At this snapshot, Git history did not yet exist and commit attribution had not yet been checked. See [Final public publication snapshot](#final-public-publication-snapshot--2026-09-06) for the later publication evidence.
 
 | Check | Status | Evidence boundary |
 | --- | --- | --- |
@@ -76,11 +76,11 @@ The Windows-host validator was run once through the configured compact-output wr
 
 Native discovery must be checked in each actual host. Manual loading by full path is a fallback and does not prove native discovery.
 
-## Publication snapshot — 2026-09-06
+## Final public publication snapshot — 2026-09-06
 
-The user confirmed the right to publish this package under its unchanged MIT license. The first private publication used a verified GitHub noreply address for commit attribution; no personal email was placed in the commit. The new repository was confirmed private after push, with the approved root commit and the ten-file tree.
+The user confirmed the right to publish this package under its unchanged MIT license. The initial public opening was verified at commit `4e45586ab190046ef7effc8968746c9ef517ab56`. Seven anonymous repository, README, and case HTTP checks confirmed public visibility, the exact commit, both raw README files, and their case links.
 
-The linked case page is live. It intentionally has no repository backlink while the repository remains private. Public visibility has user approval, but the visibility change and an anonymous check of the public repository, README, and reciprocal links are still pending.
+The live site deployed commit `4463334362719a7d55f711f33c2906c745bbe5fd`. Fresh browser checks covered the English and Ukrainian README benefits and case-link navigation. Twelve live UK/EN home, work, and case checks across desktop and mobile confirmed the exact GitHub URL and label, the case-page GitHub popup, reciprocal links, and preserved SEO metadata.
 
 ## Publication gates
 
@@ -88,10 +88,10 @@ Local package completion does not approve external action.
 
 | Gate | Required evidence | Status |
 | --- | --- | --- |
-| Fresh repository creation and private push | Approved creation; rights/licensing review; GitHub noreply attribution; exact root commit and ten-file remote tree | pass |
-| Private repository verification | Confirmed private visibility, default branch, and exact remote tree | pass |
+| Public repository and exact commit | User-confirmed MIT publication right; public visibility; exact commit; both raw README files and their case links checked anonymously | pass |
+| Public repository, README, and case HTTP checks | Seven anonymous repository, README, and case HTTP checks | pass |
 | README link to the live case | The package README links to the live case page | pass |
-| Site case link to the repository | Add only after public visibility and anonymous repository/README proof | pending |
-| Public visibility and anonymous verification | User approval is recorded; change visibility, then check the public repository, README, and reciprocal links without authentication | pending |
+| Site case link to the repository | Fresh browser checks of the English and Ukrainian case pages, including the GitHub popup | pass |
+| Reciprocal links and live UI | Twelve UK/EN home, work, and case checks across desktop and mobile; exact GitHub URL/label and SEO metadata retained | pass |
 
-Prior reconnaissance found no available scanner. After separate user approval, the official portable Gitleaks v8.30.1 archive was verified against its release digest and the isolated export passed its directory scan. The later private publication does not substitute for the public visibility check or an anonymous check after that change. A fresh export repository must never inherit parent history, templates, hooks, or remotes.
+Prior reconnaissance found no available scanner. After separate user approval, the official portable Gitleaks v8.30.1 archive was verified against its release digest and the isolated export passed its directory scan. The final public snapshot also includes a full-history scan with zero findings. A fresh export repository must never inherit parent history, templates, hooks, or remotes.

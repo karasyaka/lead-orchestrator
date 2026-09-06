@@ -2,10 +2,11 @@
 
 All notable public-package changes are documented here after review and release approval.
 
-## Unreleased
+## 2026-09-06
 
 - Prepared local publication documentation, contributor guidance, and issue/pull-request templates.
 - Expanded the English and Ukrainian README files with purpose, intended behavior, suitable use cases, and bounded invocation examples.
-- Recorded the completed private-publication evidence and the remaining public-visibility and anonymous-verification gates.
+- Published the package and recorded anonymous repository, README, case-link, full-history scan, and live reciprocal-link evidence.
+- Added the GitHub action to the English and Ukrainian home, work, and case surfaces after public verification.
 - Added no dependency, runtime, or `SKILL.md` behavior change.
-- Public visibility, anonymous public-repository verification, and reciprocal links remain pending.
+- Historical native-host and format limitations remain documented in `VALIDATION.md`; publication does not establish universal host compatibility or accurate interpretation of consequential image values.
