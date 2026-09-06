@@ -6,6 +6,8 @@ It helps recover the objective, choose a proportionate next action, delegate sui
 
 [Українською](README.uk.md) · [Validation](VALIDATION.md) · [Contributing](CONTRIBUTING.md)
 
+[Read the project case study](https://hrybachov.com/en/cases/lead-orchestrator) for the problem, implementation scope, and current limitations.
+
 ## A practical use
 
 You are preparing a release in a repository with unrelated work already in progress. Ask the agent to use Lead Orchestrator, recover the agreed scope, delegate a bounded task if appropriate, and preserve the unrelated changes. A request such as “plan only” or “do not deploy” remains a boundary; coordination is not permission to change production.
