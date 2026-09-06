@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lead Orchestrator"
+  short_description: "Continue ongoing work with context-aware coordination"
+  default_prompt: "Use $lead-orchestrator to coordinate this task using our existing conversation and project instructions."
