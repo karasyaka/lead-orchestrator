@@ -1,8 +1,14 @@
 # Lead Orchestrator
 
-Lead Orchestrator is a compact coordination skill for people who want an AI coding agent to continue an existing task without losing its decisions, scope, or approval boundaries.
+Lead Orchestrator is a compact coordination skill for AI coding work that must continue while keeping its available decisions, scope, and approval boundaries in view. It tells an agent how to recover the task, choose a proportionate next action, and report evidence at the end.
 
-It helps recover the objective, choose a proportionate next action, delegate suitable work when available, and finish with evidence. It provides instructions only. It does not add tools, accounts, memory, permissions, a server, or a separate running agent.
+Use it for a multi-step task, a handoff, or a task with constraints that the next agent must preserve. A trivial, self-contained edit usually does not need this workflow. The intended behavior is to keep the stated boundaries in view, delegate only authorized work when that helps, and make the result and remaining uncertainty clear. It provides instructions only; it does not add tools, accounts, memory, permissions, a server, or a separate running agent.
+
+## What it helps with
+
+- Recover the available task context before choosing the next action.
+- Preserve stated scope, approvals, and unrelated work already in progress.
+- Use bounded delegation when appropriate, then report evidence and blockers.
 
 [Українською](README.uk.md) · [Validation](VALIDATION.md) · [Contributing](CONTRIBUTING.md)
 
@@ -41,6 +47,35 @@ In a new or existing conversation:
 ```text
 Use $lead-orchestrator to continue this task within the agreed scope.
 ```
+
+## Prompts and expected response shape
+
+Use a short instruction that names the boundary you need preserved. A response should state the recovered objective, scope, evidence, and any blocker in plain language; its exact wording depends on the host and task.
+
+Plan without edits:
+
+```text
+Use $lead-orchestrator to plan this release only. Do not edit files or deploy.
+```
+
+Expected shape: a proposed scope, the next read-only checks, material risks, and no edits or deployment.
+
+Prefer a suitable executor:
+
+```text
+Use $lead-orchestrator to continue this task. Prefer Claude for suitable delegated work.
+```
+
+Expected shape: the task continues under the existing permissions; a suitable delegated task may use that preference, and any deviation is explained.
+
+Keep delegation exclusive or reset it:
+
+```text
+Use only Claude for delegated work on this task.
+Return to automatic selection for this task.
+```
+
+Expected shape: `only` stops dependent delegated work if the requested executor cannot satisfy it; `automatic` clears that preference for future assignments. Neither instruction adds host permissions or restarts work already running.
 
 If native discovery has not refreshed in an already open conversation, ask the agent to read the installed `SKILL.md` by its full path. That is manual loading, not proof that native `$lead-orchestrator` discovery works.
 

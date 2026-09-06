@@ -10,7 +10,7 @@ This document separates historical source-behavior evidence, local package check
 FE3BD1820A058C80ACC7DCD3E36FB4450C3B795CA54EAA0FF9C06A6DE422CA98
 ```
 
-`agents/openai.yaml` and `LICENSE` are also copied byte-for-byte from the source package. The current source was reported as passing focused validation and independent review at 98/100; that acceptance is recorded, not retested here.
+`agents/openai.yaml` and `LICENSE` are also copied byte-for-byte from the source package. This document records evidence boundaries and does not assign a package-wide review score.
 
 ## Historical behavior and host evidence
 
@@ -52,7 +52,9 @@ The isolated repository must contain exactly these ten regular files:
 
 No hidden extras, generated files, images, binaries, symlinks, reparse points, submodules, internal audit material, private paths, session/account identifiers, or secret-like values may be exported. Image metadata is N/A because the package has no image. Use GitHub's default social preview unless separately approved assets exist.
 
-## Local package check — 2026-09-06
+## Historical pre-Git package check — 2026-09-06
+
+This section records the local package state before the first repository commit and private push. At this snapshot, Git history did not yet exist and commit attribution had not yet been checked. See [Publication snapshot](#publication-snapshot--2026-09-06) for the newer private-publication evidence.
 
 | Check | Status | Evidence boundary |
 | --- | --- | --- |
@@ -62,7 +64,7 @@ No hidden extras, generated files, images, binaries, symlinks, reparse points, s
 | Source-to-export hashes and manifest | pass | All ten export files matched their source SHA-256; an internal manifest records names, hashes, and source mappings. |
 | Markdown local targets and public-prose review | pass | Local targets resolved; review found no private-path, account-identifier, or secret-like pattern in the export. |
 | Secret scanner | pass | Authorized official Gitleaks v8.30.1 directory scan: 44,025 bytes, zero findings, exit 0; redacted output. Git history does not exist yet and remains unscanned. |
-| Commit author and GitHub noreply audit | not run | Requires explicit approval before a first commit. |
+| Commit author and GitHub noreply audit | not run | At this pre-Git snapshot, a first commit and its attribution did not yet exist. |
 
 The Windows-host validator was run once through the configured compact-output wrapper. Its tool locations are intentionally not part of the public package.
 
@@ -74,16 +76,22 @@ The Windows-host validator was run once through the configured compact-output wr
 
 Native discovery must be checked in each actual host. Manual loading by full path is a fallback and does not prove native discovery.
 
+## Publication snapshot — 2026-09-06
+
+The user confirmed the right to publish this package under its unchanged MIT license. The first private publication used a verified GitHub noreply address for commit attribution; no personal email was placed in the commit. The new repository was confirmed private after push, with the approved root commit and the ten-file tree.
+
+The linked case page is live. It intentionally has no repository backlink while the repository remains private. Public visibility has user approval, but the visibility change and an anonymous check of the public repository, README, and reciprocal links are still pending.
+
 ## Publication gates
 
 Local package completion does not approve external action.
 
 | Gate | Required evidence | Status |
 | --- | --- | --- |
-| Fresh repository creation and private push | Explicit user approval; exact diff and manifest; approved scanner; rights/licensing review; repository-existence recheck; confirmed author identity and GitHub noreply email | not run |
-| Private repository verification | Confirmed private visibility and exact remote tree | not run |
-| README/About link to a verified live case | Separately approved update after a verified live case | not run |
-| Site case link to GitHub | Separately approved release after anonymous public repository and README proof | not run |
-| Public visibility and deployment | Separate explicit approval, release plan, and post-change checks | not run |
+| Fresh repository creation and private push | Approved creation; rights/licensing review; GitHub noreply attribution; exact root commit and ten-file remote tree | pass |
+| Private repository verification | Confirmed private visibility, default branch, and exact remote tree | pass |
+| README link to the live case | The package README links to the live case page | pass |
+| Site case link to the repository | Add only after public visibility and anonymous repository/README proof | pending |
+| Public visibility and anonymous verification | User approval is recorded; change visibility, then check the public repository, README, and reciprocal links without authentication | pending |
 
-Prior reconnaissance found no available scanner. After separate user approval, the official portable Gitleaks v8.30.1 archive was verified against its release digest and the isolated export passed its directory scan. This does not substitute for the future new-history scan or rights review. Do not create a commit until authorship and a verified GitHub noreply email are explicitly approved. A fresh export repository must never inherit parent history, templates, hooks, or remotes.
+Prior reconnaissance found no available scanner. After separate user approval, the official portable Gitleaks v8.30.1 archive was verified against its release digest and the isolated export passed its directory scan. The later private publication does not substitute for the public visibility check or an anonymous check after that change. A fresh export repository must never inherit parent history, templates, hooks, or remotes.
