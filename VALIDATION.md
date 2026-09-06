@@ -7,10 +7,21 @@ This document separates historical source-behavior evidence, local package check
 `SKILL.md` is frozen for this package. Its SHA-256 is:
 
 ```text
-FE3BD1820A058C80ACC7DCD3E36FB4450C3B795CA54EAA0FF9C06A6DE422CA98
+DDAAB3F07D85FE990636F9F9BA333A93D4EB3E246392D4612AD091F3809ABB70
 ```
 
 `agents/openai.yaml` and `LICENSE` are also copied byte-for-byte from the source package. This document records evidence boundaries and does not assign a package-wide review score.
+
+## Current instruction-only handoff update
+
+The current export `SKILL.md` is byte-identical to the canonical source at the hash above. The update adds only instructions for exact handoff paths and a suitable-reader prerequisite, evidence-based statuses, authorized per-run journal/privacy/denial guards, and the rule that lifecycle completion is not task success. It does not add an automatic collector, overview, database, script, HTML artifact, hook configuration, or telemetry.
+
+| Check | Status | Evidence boundary |
+| --- | --- | --- |
+| Current source-to-export `SKILL.md` hash | pass | Byte equality at the current guard hash. |
+| Structural skill validation | pass | `quick_validate.py` had already passed the identical source structure. |
+| Native historical checks against the new guard hash | not run | Earlier native checks remain historical and were not rerun for this instruction-only update. |
+| Separate local Codex journal pilot | pass, bounded | One task observed `Stop` and matching `SubagentStart`/`SubagentStop`; this does not validate all-chat telemetry or current skill behavior across hosts. |
 
 ## Historical behavior and host evidence
 

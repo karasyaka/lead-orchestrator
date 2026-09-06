@@ -2,6 +2,12 @@
 
 All notable public-package changes are documented here after review and release approval.
 
+## v0.1.0 — 2026-09-06
+
+- Added instruction-only handoff guards in `SKILL.md`: give the receiving executor the exact current working directory and artifact paths only when a suitable reader exists; otherwise report the missing prerequisite as blocked without guessing paths.
+- Added visible evidence-status, per-run journal privacy, and access-denial guards. A terminal executor lifecycle event, including `Stop` or `SubagentStop`, is not task-success evidence.
+- This update does not include an automatic collector, overview, database, script, HTML artifact, hook configuration, or background telemetry.
+
 ## 2026-09-06
 
 - Prepared local publication documentation, contributor guidance, and issue/pull-request templates.
