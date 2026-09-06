@@ -1,14 +1,14 @@
 # Lead Orchestrator
 
-Lead Orchestrator is a compact coordination skill for AI coding work that must continue while keeping its available decisions, scope, and approval boundaries in view. It tells an agent how to recover the task, choose a proportionate next action, and report evidence at the end.
+Lead Orchestrator helps a developer or project owner keep one task moving across Codex, Claude Code, and Antigravity. It helps distribute work, pass along the context that matters, and check the result. It works through tools already configured and available in your environment.
 
-Use it for a multi-step task, a handoff, or a task with constraints that the next agent must preserve. A trivial, self-contained edit usually does not need this workflow. The intended behavior is to keep the stated boundaries in view, delegate only authorized work when that helps, and make the result and remaining uncertainty clear. It provides instructions only; it does not add tools, accounts, memory, permissions, a server, or a separate running agent.
+Use it for a multi-step task, a handoff, or work with boundaries the next agent must keep. A small, self-contained edit usually does not need it.
 
 ## What it helps with
 
-- Recover the available task context before choosing the next action.
-- Preserve stated scope, approvals, and unrelated work already in progress.
-- Use bounded delegation when appropriate, then report evidence and blockers.
+- Keep the goal, approvals, and unrelated work visible.
+- Split a task between available, authorized tools without losing the needed explanation.
+- Check the returned result and report what passed, failed, or was not run.
 
 [Українською](README.uk.md) · [Validation](VALIDATION.md) · [Contributing](CONTRIBUTING.md)
 
@@ -16,7 +16,7 @@ Use it for a multi-step task, a handoff, or a task with constraints that the nex
 
 ## A practical use
 
-You are preparing a release in a repository with unrelated work already in progress. Ask the agent to use Lead Orchestrator, recover the agreed scope, delegate a bounded task if appropriate, and preserve the unrelated changes. A request such as “plan only” or “do not deploy” remains a boundary; coordination is not permission to change production.
+You are preparing a release in a repository with unrelated work already in progress. If the tools are available and authorized, Codex can lead the task, Claude Code can review a focused document, and Antigravity can check how a page looks. Each handoff carries the goal, allowed files, evidence, and stop condition, so the result can be checked without repeating the whole task. “Plan only” and “do not deploy” still apply; coordination does not authorize a production change.
 
 ## Quick start
 
