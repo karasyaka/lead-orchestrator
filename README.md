@@ -1,4 +1,4 @@
-# Lead Orchestrator
+# Lead Orchestrator — Codex, Claude Code, and Antigravity working together
 
 Lead Orchestrator helps a developer or project owner keep one task moving across Codex, Claude Code, and Antigravity. It helps distribute work, pass along the context that matters, and check the result. It works through tools already configured and available in your environment.
 
