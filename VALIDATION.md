@@ -7,7 +7,7 @@ This document separates historical source-behavior evidence, local package check
 `SKILL.md` at this revision has SHA-256:
 
 ```text
-616CBB751B518303034AF67433776EC3E489C447CEEF400FEE70D49DAB167DA0
+9A50FD52C2FCD4026C364406851107A78F5817E208C624C15ED249EA70471985
 ```
 
 `agents/openai.yaml` and `LICENSE` are also copied byte-for-byte from the source package. This document records evidence boundaries and does not assign a package-wide review score.
