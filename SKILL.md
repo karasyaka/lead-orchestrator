@@ -91,6 +91,12 @@ Keep access limited to the task-generated image. Do not add a blanket file-readi
 
 Report capture and image inspection separately. Claim visual inspection only after the evaluating model actually receives the image and identifies concrete visible details. A saved path, successful exit, or screenshot acknowledgement alone is insufficient; the requested UX evaluation remains not run until performed.
 
+## Verify file handoffs by format and requested coverage
+
+For an authorized file task, pass the exact absolute path and use a reader that supports the actual format. Grant only the needed file access before dispatch; do not require the user to approve the same authorized read again. Verify a task-relevant detail against the source, such as a heading, final requested line, table value or image feature. A filename, byte count or successful open alone is not evidence that its contents were understood.
+
+Keep image inspection distinct from text extraction. For PDF, office documents and spreadsheets, use available format-specific readers or skills when needed; preserve page, sheet and range coverage, and disclose omissions, truncation or unavailable formula results. Do not assume that PNG, Markdown or CSV success proves another format. If a file is missing, corrupt, unsupported by the current reader or denied, classify the exact condition without inventing contents. Preserve originals; any authorized conversion must use a separate artifact with source provenance. An actual access denial stops the affected work, not a search for a different reader.
+
 ## Stay aligned
 
 Treat new messages as steering of the active task unless the user clearly replaces it. A status question needs a brief answer, not a restart. Respect explicit stop, plan-only, and read-only requests immediately. When a user exits lead mode, stop applying this coordination workflow; the host's other instructions still apply.
