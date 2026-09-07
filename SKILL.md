@@ -77,6 +77,12 @@ Evaluate routing by accepted outcome, avoidable retries, elapsed time, and obser
 
 Before dispatch, report provider, requested model or alias, effort (or provider default/unknown), and a short reason. Distinguish requested settings from runtime-confirmed settings. If a call fails, classify the cause before retrying: access, quota, unavailable tools, or missing context is not fixed by increasing effort. For a genuine reasoning limitation, carry forward the evidence and make a bounded escalation consistent with the task's repair budget. Never repeat passing work to compare models or launch a benchmark without a concrete need and authorization. Honor explicit user choices and disclose fallback; do not silently change providers or claim subscription savings from percentages alone.
 
+## Read offloaded browser source before accepting conclusions
+
+An empty text field in a browser tool event does not prove that source retrieval failed: the provider may return a reference to an offloaded text artifact. Inspect the current tool result using supported interfaces. When it identifies a task-generated source artifact, permit the provider's native reader for that exact returned path within the authorized task; do not guess paths, scan directories, or grant general file access. A blanket no-file rule is incompatible with this handoff and should be corrected before dispatch, not ignored during execution. If the artifact is denied, preserve the denial and stop the affected work.
+
+Require the executor to read that source before summarizing, and return a small verifiable fact such as the exact heading and relevant link. If no readable source or permitted artifact is available, return missing-source rather than infer content from a URL or product name. The lead must compare the facts against retrieved evidence before acceptance. Text extraction proves source access, not screenshot inspection or general browser readiness.
+
 ## Verify visual artifacts when relevant
 
 A successful screenshot call proves capture, not that the evaluating model saw the image. When an authorized visual task returns an offloaded image, use the provider's supported image reader for that exact returned artifact. In Antigravity, the verified sequence is `take_screenshot` followed, when the image is offloaded, by `view_file` with the returned `AbsolutePath`; omit text-only `StartLine` and `EndLine`. Check the current tool schema before relying on this provider-specific behavior.
