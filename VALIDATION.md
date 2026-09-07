@@ -4,21 +4,38 @@ This document separates historical source-behavior evidence, local package check
 
 ## Current source guard
 
-`SKILL.md` is frozen for this package. Its SHA-256 is:
+`SKILL.md` at this revision has SHA-256:
 
 ```text
-DDAAB3F07D85FE990636F9F9BA333A93D4EB3E246392D4612AD091F3809ABB70
+616CBB751B518303034AF67433776EC3E489C447CEEF400FEE70D49DAB167DA0
 ```
 
 `agents/openai.yaml` and `LICENSE` are also copied byte-for-byte from the source package. This document records evidence boundaries and does not assign a package-wide review score.
 
-## Current instruction-only handoff update
+## Current bounded file and browser checks
 
-The current export `SKILL.md` is byte-identical to the canonical source at the hash above. The update adds only instructions for exact handoff paths and a suitable-reader prerequisite, evidence-based statuses, authorized per-run journal/privacy/denial guards, and the rule that lifecycle completion is not task success. It does not add an automatic collector, overview, database, script, HTML artifact, hook configuration, or telemetry.
+The installed, canonical and public skill copies were compared byte-for-byte. These checks prove named scenarios, not universal file or provider support.
 
 | Check | Status | Evidence boundary |
 | --- | --- | --- |
-| Current source-to-export `SKILL.md` hash | pass | Byte equality at the current guard hash. |
+| Antigravity browser text | pass | Exact heading, paragraph and link verified after reading an offloaded source artifact. |
+| Screenshot capture and image inspection | pass | Native image reader loaded the generated screenshot; concrete layout details matched the same image inspected by the lead. |
+| PNG, UTF-8 Markdown and CSV | pass | Unprompted image markers/shapes, text markers and numeric total matched fixtures. |
+| Native Antigravity PDF/DOCX/XLSX reader | unsupported | MIME errors; no access-denial bypass. |
+| PDF/DOCX/XLSX extracted-content handoff | pass | Page markers, paragraphs/table rows, both sheets, cell values and formula/cache distinction preserved through format-specific readers. |
+| Word page rendering and inspection | pass, bounded | LibreOffice rendered one DOCX fixture; native image reader and lead confirmed table, markers and no clipping/overlap. Not arbitrary complex-layout compatibility. |
+| Image-only PDF | pass | Empty text extraction confirmed; rendered page was read as an image and all control text/numbers matched. |
+| Spreadsheet recalculation | pass, bounded | Artifact Tool 2.8.59 recalculated SUM from 25 to 36 after changing an input in a disposable in-memory copy. Not Microsoft Excel compatibility proof. |
+
+No claim covers arbitrary formulas, macros, password-protected files, unreadable scans, audio or video. Original files remained unchanged. Provider model aliases were requested; exact runtime versions were not independently confirmed.
+
+## Historical instruction-only handoff update
+
+The earlier handoff update was checked at SHA-256 `DDAAB3F07D85FE990636F9F9BA333A93D4EB3E246392D4612AD091F3809ABB70`. That update added only instructions for exact handoff paths and a suitable-reader prerequisite, evidence-based statuses, authorized per-run journal/privacy/denial guards, and the rule that lifecycle completion is not task success. It does not add an automatic collector, overview, database, script, HTML artifact, hook configuration, or telemetry.
+
+| Check | Status | Evidence boundary |
+| --- | --- | --- |
+| Historical source-to-export `SKILL.md` hash | pass | Byte equality at the earlier handoff-update hash. |
 | Structural skill validation | pass | `quick_validate.py` had already passed the identical source structure. |
 | Native historical checks against the new guard hash | not run | Earlier native checks remain historical and were not rerun for this instruction-only update. |
 | Separate local Codex journal pilot | pass, bounded | One task observed `Stop` and matching `SubagentStart`/`SubagentStop`; this does not validate all-chat telemetry or current skill behavior across hosts. |
