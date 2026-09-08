@@ -2,6 +2,10 @@
 
 All notable public-package changes are documented here after review and release approval.
 
+## 2026-09-08
+
+- Require finite prompt input and the installed launcher for available Claude-to-Codex handoffs, explicit task-fit model/effort, and progress checks before retries. This instruction change is not enforcement over already-running chats.
+
 ## v0.1.0 — 2026-09-06
 
 - Added instruction-only handoff guards in `SKILL.md`: give the receiving executor the exact current working directory and artifact paths only when a suitable reader exists; otherwise report the missing prerequisite as blocked without guessing paths.
