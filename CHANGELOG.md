@@ -2,6 +2,11 @@
 
 All notable public-package changes are documented here after review and release approval.
 
+## 2026-09-10
+
+- Documented a bounded Claude-to-Codex-to-Claude handoff: the receiving Claude read the answer and source CSV and accepted matching counts.
+- Clarified that separately tested local launcher and startup-hook fixes are not included or installed by this instruction-only package. No skill behavior change or new version tag accompanies this documentation update.
+
 ## 2026-09-08
 
 - Require finite prompt input and the installed launcher for available Claude-to-Codex handoffs, explicit task-fit model/effort, and progress checks before retries. This instruction change is not enforcement over already-running chats.

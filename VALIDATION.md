@@ -12,6 +12,21 @@ This document separates historical source-behavior evidence, local package check
 
 `agents/openai.yaml` and `LICENSE` are also copied byte-for-byte from the source package. This document records evidence boundaries and does not assign a package-wide review score.
 
+## Bounded local handoff check — 2026-09-10
+
+One successful Claude-to-Codex-to-Claude handoff used a temporary, restricted launch profile and a fixed local helper calling the installed Codex launcher. Claude read both the returned answer and a sanitized CSV, then accepted matching counts: 31 recorded runs, 26 with exit code zero and 5 with nonzero exit codes. These counts describe process exits, not accepted task outcomes. The lead independently checked the counts and the answer/source read events; the owned Claude, Codex and supervisor processes had exited.
+
+This was not first-attempt success. An initial command with an extra punctuation argument was denied before Codex launched. A subsequent answer failed to provide counts after assuming the wrong CSV column; Claude correctly rejected it. The accepted attempt followed clarification of the exact CSV field names. Permissions were not broadened to repair the denied command.
+
+| Check | Status | Evidence boundary |
+| --- | --- | --- |
+| Answer delivery and acceptance | pass, bounded | One accepted CSV-counting task under the temporary launch profile; not a coding-quality benchmark or proof for existing interactive chats. |
+| Separate local launcher status repair | pass, bounded | Ten targeted state-machine scenarios, an affected-scenario recheck after the final correction, and independent source review. This repaired inconsistent wait statuses, not every possible runtime failure. |
+| Separate startup-hook change | pass, source check | Mocked launch arguments and independent review confirmed dry-run invocation of the watchdog. Other invocation paths and scheduled tasks were not changed or validated. |
+| All-chat operation and current Antigravity integration | not run | This check does not cover other profiles, every conversation, or a new Antigravity handoff. |
+
+**Distribution boundary:** the local launcher repair, startup-hook change, helper and private evidence are not shipped in this repository. Installing this skill does not install those fixes. `SKILL.md` and its source hash are unchanged by this documentation update; no universal reliability score is assigned.
+
 ## Current bounded file and browser checks
 
 The installed, canonical and public skill copies were compared byte-for-byte. These checks prove named scenarios, not universal file or provider support.
